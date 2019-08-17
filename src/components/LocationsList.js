@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Axios from "axios";
+import LocationCard from "./LocationCard";
 
 export default function LocationList() {
   // TODO: Add useState to track data from useEffect
@@ -21,11 +22,9 @@ export default function LocationList() {
 
   return (
     <section className="location-list grid-view">
-      <h2>
-        {locationList.map(locals => {
-          return `${locals.name}`;
-        })}
-      </h2>
+      {locationList.map(locals => {
+        return <LocationCard key={locals.name} locals={locals} />;
+      })}
     </section>
   );
 }

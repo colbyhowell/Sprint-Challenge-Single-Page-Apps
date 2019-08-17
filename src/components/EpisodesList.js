@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Axios from "axios";
+import EpisodeCard from "./EpisodeCard";
 
 export default function EpisodeList() {
   // TODO: Add useState to track data from useEffect
@@ -21,11 +22,9 @@ export default function EpisodeList() {
 
   return (
     <section className="location-list grid-view">
-      <h2>
-        {episodeList.map(eps => {
-          return `${eps.name}`;
-        })}
-      </h2>
+      {episodeList.map(eps => {
+        return <EpisodeCard key={eps.name} eps={eps} />;
+      })}
     </section>
   );
 }
