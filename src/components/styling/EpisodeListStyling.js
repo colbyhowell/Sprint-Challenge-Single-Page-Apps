@@ -23,4 +23,5 @@ export const EpisodeNumber = styled.div`
 export const EpisodeAirDate = styled.div`
   font-size: 2rem;
   color: blue;
+  font-weight: 400;
 `;
